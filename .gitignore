@@ -1,0 +1,8 @@
+﻿.Rproj.user/
+.Rhistory
+.RData
+data/raw/*
+!data/raw/.gitkeep
+data/*.sqlite
+renv/library/
+renv/staging/

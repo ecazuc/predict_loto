@@ -24,5 +24,7 @@ R, tidyverse, DBI + RSQLite (data/loto.sqlite), Shiny + bslib, testthat, renv.
 - Tests: `testthat::test_dir("tests/testthat")`
 
 ## Game rules reference
-- Loto: 5 numbers 1–49 + lucky number 1–10 (since 2008; 3 draws/week since 2019)
-- Euromillions: 5 numbers 1–50 + 2 stars 1–12 (since 2016; earlier eras differ)
+- Loto: 5 numbers 1–49 + chance number 1–10, from 2008-10-06 (the 1976–2008 archive is 6 balls + complementary and is excluded). ~156 draws/year in the data.
+- Euromillions: 5 numbers 1–50 + 2 stars, from 2004-02-13. Weekly until May 2011, then twice weekly. Star max: 9 (2004), 11 (2011), 12 (Sep 2016).
+- Source: FDJ ZIP archives (https://www.fdj.fr/jeux-de-tirage/loto/historique and .../euromillions-my-million/historique), downloaded into data/raw/ (git-ignored).
+- R on this machine: `C:\Program Files\R\R-4.6.1\bin\Rscript.exe`; set `R_LIBS_USER=%LOCALAPPDATA%\R\win-library\4.6` (system library is not writable).
