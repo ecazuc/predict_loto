@@ -1,6 +1,6 @@
 Package: predictloto
 Title: French Loto and Euromillions history, statistics and Shiny app
-Version: 0.0.1
+Version: 0.1.0
 Imports:
     DBI,
     DT,
@@ -9,11 +9,10 @@ Imports:
     dbplyr,
     dplyr,
     ggplot2,
+    lintr,
     readr,
     shiny,
+    styler,
+    testthat,
     tibble,
     tidyr
-Suggests:
-    lintr,
-    styler,
-    testthat (>= 3.0.0)
