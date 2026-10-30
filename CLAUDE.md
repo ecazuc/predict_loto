@@ -18,7 +18,11 @@ R, tidyverse, DBI + RSQLite (data/loto.sqlite), Shiny + bslib, testthat, renv.
 
 ## Conventions
 - tidyverse style, snake_case, `styler` formatting, roxygen comments on functions in R/
-- Draw schema: game, draw_id, date, n1..n5, bonus (lucky | star1, star2)
+- Draw schema: game, draw_id, date, n1..n5, bonus1, bonus2 (Loto: bonus1 = chance number, bonus2 = NA; Euromillions: the two stars)
+- SQLite tables: draws_loto, draws_euromillions (wide), drawn_numbers (long: game, draw_id, date, kind ball|bonus, position, number), meta
+- Dates are stored as ISO text in SQLite
+- Refresh data: `Rscript scripts/download_fdj.R [--latest]` then `Rscript scripts/run_etl.R`
+- Lint/format: `styler::style_dir("R")`, `lintr::lint_dir("R")` (config in .lintr). Dependencies are declared in DESCRIPTION (renv snapshot type: explicit)
 - ETL must be idempotent; keep format-era handling in one place
 - Run: `renv::restore()`, `source("scripts/run_etl.R")`, `shiny::runApp("app")`
 - Tests: `testthat::test_dir("tests/testthat")`
