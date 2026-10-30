@@ -4,7 +4,7 @@ source("R/backtest.R")
 options(width = 120)
 
 con <- DBI::dbConnect(RSQLite::SQLite(), "data/loto.sqlite")
-star_era_start <- as.Date("2016-09-27") # first draw with stars 1-12
+star_era_start <- game_rules$euromillions$bonus_since # first draw with stars 1-12
 
 targets <- list(
   list(game = "loto", kind = "ball", label = "Loto balls", since = NULL),

@@ -3,9 +3,10 @@
 
 library(dplyr)
 
+# bonus_since: first date of the current bonus range (Euromillions stars were 1-9, 1-11, then 1-12)
 game_rules <- list(
-  loto = list(max_ball = 49L, max_bonus = 10L),
-  euromillions = list(max_ball = 50L, max_bonus = 12L)
+  loto = list(max_ball = 49L, max_bonus = 10L, n_bonus = 1L, bonus_since = as.Date(NA)),
+  euromillions = list(max_ball = 50L, max_bonus = 12L, n_bonus = 2L, bonus_since = as.Date("2016-09-27"))
 )
 
 load_draws <- function(con, game) {
