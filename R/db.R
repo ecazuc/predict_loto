@@ -2,6 +2,13 @@
 
 library(DBI)
 
+#' Run `f(con)` on a short-lived connection to the SQLite file.
+with_db <- function(db_path, f) {
+  con <- dbConnect(RSQLite::SQLite(), db_path)
+  on.exit(dbDisconnect(con))
+  f(con)
+}
+
 #' Long format: one row per drawn ball / bonus number (easier for frequency stats).
 to_long <- function(draws) {
   balls <- tidyr::pivot_longer(draws,

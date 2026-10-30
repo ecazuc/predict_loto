@@ -3,10 +3,14 @@ Title: French Loto and Euromillions history, statistics and Shiny app
 Version: 0.0.1
 Imports:
     DBI,
+    DT,
     RSQLite,
+    bslib,
     dbplyr,
     dplyr,
+    ggplot2,
     readr,
+    shiny,
     tibble,
     tidyr
 Suggests:
