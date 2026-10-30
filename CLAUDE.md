@@ -21,6 +21,7 @@ R, tidyverse, DBI + RSQLite (data/loto.sqlite), Shiny + bslib, testthat, renv.
 - Draw schema: game, draw_id, date, n1..n5, bonus1, bonus2 (Loto: bonus1 = chance number, bonus2 = NA; Euromillions: the two stars)
 - SQLite tables: draws_loto, draws_euromillions (wide), drawn_numbers (long: game, draw_id, date, kind ball|bonus, position, number), meta
 - Dates are stored as ISO text in SQLite
+- `backtest_results` table is written by scripts/run_backtest.R (not by run_etl.R); stats via scripts/stats_report.R
 - Refresh data: `Rscript scripts/download_fdj.R [--latest]` then `Rscript scripts/run_etl.R`
 - Lint/format: `styler::style_dir("R")`, `lintr::lint_dir("R")` (config in .lintr). Dependencies are declared in DESCRIPTION (renv snapshot type: explicit)
 - ETL must be idempotent; keep format-era handling in one place
